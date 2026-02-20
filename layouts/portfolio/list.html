@@ -1,0 +1,131 @@
+{{ define "main" }}
+
+<script>
+  document.documentElement.classList.add("dbl-is-home");
+  document.documentElement.classList.add("dbl-is-portfolio");
+</script>
+
+<style>
+  .main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .dbl-portfolio {
+    --dbl-bg: #0e0f12;
+    --dbl-text: rgba(255,255,255,.92);
+    --dbl-muted: rgba(255,255,255,.72);
+    background: var(--dbl-bg);
+    color: var(--dbl-text);
+  }
+
+  .dbl-portfolio .dbl-hero__overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.52), rgba(0,0,0,0.42));
+  }
+
+  .dbl-portfolio__content .dbl-container {
+    width: min(1600px, calc(100% - 48px));
+  }
+
+  #dbl-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+  }
+
+  #dbl-lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #dbl-lightbox img {
+    max-width: 92%;
+    max-height: 92%;
+    border-radius: 10px;
+  }
+
+  #dbl-lightbox button {
+    position: absolute;
+    border: 0;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #dbl-lightbox button:hover {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .dbl-close {
+    top: 18px;
+    right: 26px;
+    font-size: 40px;
+    line-height: 1;
+    padding: 8px 12px;
+  }
+
+  .dbl-prev,
+  .dbl-next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 54px;
+    line-height: 1;
+    padding: 10px 16px;
+  }
+
+  .dbl-prev { left: 18px; }
+  .dbl-next { right: 18px; }
+
+  .dbl-is-portfolio .dbl-nav {
+    padding-top: 22px !important;
+  }
+</style>
+
+<div class="dbl-portfolio">
+
+  <!-- HERO (uses section title and description) -->
+  <section class="dbl-hero dbl-hero--portfolio" style="--dbl-hero-img: url('/images/home/hero.jpg'); --dbl-hero-size: 135%; --dbl-hero-pos: 50% 38%; height: clamp(490px, 62vh, 680px); min-height: 490px;">
+    <div class="dbl-hero__overlay"></div>
+
+    <div class="dbl-hero__inner">
+      <h1 class="dbl-hero__title">{{ .Title }}</h1>
+      {{ with .Params.description }}
+      <p class="dbl-hero__subtitle">{{ . }}</p>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT (description + gallery) -->
+  <section class="dbl-section dbl-portfolio__content">
+    <div class="dbl-container">
+      {{ .Content }}
+    </div>
+  </section>
+
+  <!-- Reuse Home page final CTA banner -->
+  <section class="dbl-cta" style="--dbl-cta-img: url('/images/home/cta.jpg');">
+    <div class="dbl-cta__overlay"></div>
+
+    <div class="dbl-cta__inner dbl-container">
+      <h2 class="dbl-cta__title">Pronto a prenotare<br>la tua sessione?</h2>
+
+      <div class="dbl-cta__actions">
+        <a class="dbl-btn dbl-btn--ghost" href="/contact/">Richiedi un Preventivo Gratuito</a>
+        <a class="dbl-btn dbl-btn--primary" href="/portfolio/">Vedi il Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script defer src="/lightbox.js"></script>
+
+{{ end }}

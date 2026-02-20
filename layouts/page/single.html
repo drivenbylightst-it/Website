@@ -1,0 +1,137 @@
+{{- define "main" -}}
+<script>
+  document.documentElement.classList.add('dbl-is-home');
+  document.documentElement.classList.add('dbl-is-page');
+</script>
+<style>
+  .main{max-width:none!important;padding:0!important}
+
+  .dbl-page{
+    --dbl-bg:#0e0f12;
+    --dbl-text:rgba(255,255,255,.92);
+    --dbl-muted:rgba(255,255,255,.72);
+    background:var(--dbl-bg);
+    color:var(--dbl-text);
+  }
+
+  .dbl-is-page .dbl-nav{
+    padding-top:22px!important;
+  }
+
+  .dbl-page .dbl-hero{
+    min-height:490px;
+    height:clamp(490px,62vh,680px);
+    background-size:135%;
+    background-position:50% 38%;
+  }
+
+  .dbl-page .dbl-hero__overlay{
+    background:linear-gradient(180deg,rgba(0,0,0,.52),rgba(0,0,0,.42));
+  }
+
+  .dbl-page .dbl-hero__subtitle{
+    margin-top:10px;
+    color:var(--dbl-muted);
+  }
+
+  .dbl-page .dbl-section{
+    padding:86px 0;
+  }
+
+  .dbl-page .dbl-container{
+    width:min(1600px,calc(100% - 48px));
+    margin:0 auto;
+  }
+
+  .dbl-page .dbl-text{
+    color:var(--dbl-text);
+  }
+
+  .dbl-page .dbl-text a{
+    color:#fff;
+  }
+</style>
+
+<link rel="preload" as="image" href="{{ .Params.heroImage | default "/images/home/hero.jpg" }}">
+
+<main class="dbl-page">
+
+  <section class="dbl-hero dbl-hero--compact" style="--dbl-hero-img: url('{{ .Params.heroImage | default "/images/home/hero.jpg" }}');">
+    <div class="dbl-hero__overlay"></div>
+    <div class="dbl-hero__inner">
+      <h1 class="dbl-hero__title">{{ .Title }}</h1>
+      <p class="dbl-hero__subtitle">Driven By Light</p>
+    </div>
+  </section>
+
+  <section class="dbl-section">
+    <div class="dbl-container">
+      <article class="dbl-text">
+        {{ .Content }}
+      </article>
+    </div>
+  </section>
+
+  <section class="dbl-cta" style="--dbl-cta-img: url('/images/home/cta.jpg');">
+    <div class="dbl-cta__overlay"></div>
+
+    <div class="dbl-cta__inner dbl-container">
+      <h2 class="dbl-cta__title">Pronto a prenotare<br>la tua sessione?</h2>
+
+      <div class="dbl-cta__actions">
+        <a class="dbl-btn dbl-btn--ghost" href="/contact/">Richiedi un Preventivo Gratuito</a>
+        <a class="dbl-btn dbl-btn--primary" href="/portfolio/">Vedi il Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{{ if eq .RelPermalink "/contact/" }}
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var form = document.getElementById("dbl-contact-form");
+    if (!form || !window.emailjs) return;
+
+    var statusEl = document.getElementById("dbl-contact-status");
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var publicKey = form.dataset.emailjsPublicKey;
+    var serviceId = form.dataset.emailjsServiceId;
+    var templateId = form.dataset.emailjsTemplateId;
+
+    if (!publicKey || !serviceId || !templateId ||
+        publicKey.indexOf("YOUR_") === 0 ||
+        serviceId.indexOf("YOUR_") === 0 ||
+        templateId.indexOf("YOUR_") === 0) {
+      if (statusEl) {
+        statusEl.textContent = "Configura prima EmailJS (public key, service id, template id).";
+      }
+      return;
+    }
+
+    emailjs.init({ publicKey: publicKey });
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (statusEl) statusEl.textContent = "Invio in corso...";
+
+      var templateParams = Object.fromEntries(new FormData(form).entries());
+
+      emailjs.send(serviceId, templateId, templateParams)
+        .then(function () {
+          form.reset();
+          if (statusEl) statusEl.textContent = "Messaggio inviato con successo.";
+        })
+        .catch(function () {
+          if (statusEl) statusEl.textContent = "Invio non riuscito. Riprova tra poco.";
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
+    });
+  });
+</script>
+{{ end }}
+{{- end -}}

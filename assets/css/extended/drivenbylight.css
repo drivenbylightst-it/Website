@@ -1,0 +1,383 @@
+/* =========================
+   Driven By Light - Global
+   ========================= */
+
+/* palette */
+:root{
+  --dbl-bg: #0e0f12;
+  --dbl-surface: rgba(255,255,255,.04);
+  --dbl-text: rgba(255,255,255,.92);
+  --dbl-muted: rgba(255,255,255,.68);
+
+  /* arancione NON sparato */
+  --dbl-accent: #c98646;
+  --dbl-accent-2: #b8773c;
+
+  --dbl-radius: 18px;
+  --dbl-shadow: 0 14px 34px rgba(0,0,0,.35);
+  --dbl-header-h: 74px;
+}
+
+/* base safety */
+html, body { background: var(--dbl-bg); }
+body { color: var(--dbl-text); }
+
+/* PaperMod container: tienilo “normale” sulle pagine interne */
+.main{
+  max-width: 1100px;
+}
+
+/* =========================
+   Header (tutte le pagine)
+   ========================= */
+.dbl-header{
+  position: fixed; /* sempre visibile durante lo scroll */
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--dbl-header-h);
+  display: flex;
+  align-items: center;
+  pointer-events: none; /* riabilito sui figli cliccabili */
+  transition: background-color .2s ease, backdrop-filter .2s ease, border-color .2s ease;
+}
+
+.dbl-header.dbl-header--scrolled{
+  background: rgba(10,12,16,.72);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dbl-nav{
+  width: min(1400px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  pointer-events: auto;
+}
+
+.dbl-logo{
+  display: inline-flex;
+  align-items: center;        /* <-- allinea logo + testo sulla stessa linea */
+  gap: 12px;
+  text-decoration: none;
+  color: var(--dbl-text);
+}
+
+.dbl-logo img{
+  height: 28px;               /* regola qui la “quota” del logo */
+  width: auto;
+  display: block;
+}
+
+.dbl-brand{
+  font-weight: 700;
+  letter-spacing: .2px;
+  font-size: 20px;
+  line-height: 1;             /* aiuta a non “scendere” rispetto al logo */
+}
+
+/* menu centrato */
+.dbl-nav__center{
+  display: flex;
+  justify-content: center;
+}
+
+.dbl-menu{
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dbl-menu a{
+  color: rgba(255,255,255,.82);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: .3px;
+}
+
+.dbl-menu a:hover{
+  color: #fff;
+}
+
+/* CTA right */
+.dbl-nav__right{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.dbl-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  color: var(--dbl-text);
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.dbl-btn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.07);
+}
+
+.dbl-btn--primary{
+  background: var(--dbl-accent);
+  border-color: transparent;
+  color: #0b0b0b;
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+}
+
+.dbl-btn--primary:hover{
+  background: var(--dbl-accent-2);
+  transform: translateY(-1px);
+}
+
+.dbl-btn--hire{
+  padding: 10px 16px;     /* più “basso” */
+  font-size: 12px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  background: var(--dbl-accent);
+  border: 0;
+  color: #0b0b0b;
+}
+
+/* =========================
+   HOME hero (solo home)
+   ========================= */
+/* se tu aggiungi la classe dbl-is-home su <html> (come già fai) */
+html.dbl-is-home .main{
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+.dbl-home{}
+
+/* hero */
+.dbl-hero{
+  position: relative;
+  min-height: var(--dbl-hero-min-h, 100vh);
+  height: var(--dbl-hero-h, 100vh);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  background-image: var(--dbl-hero-img);
+  background-size: var(--dbl-hero-size, cover);         /* <-- evita “allungata” brutta */
+  background-position: var(--dbl-hero-pos, center);
+  background-repeat: no-repeat;
+}
+
+.dbl-hero__overlay{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.35) 0%, rgba(0,0,0,.62) 55%, rgba(0,0,0,.72) 100%);
+}
+
+.dbl-hero__inner{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: min(980px, calc(100% - 48px));
+  padding-top: var(--dbl-header-h); /* evita clash con header */
+}
+
+.dbl-hero__title{
+  margin: 0 0 18px 0;
+  font-size: clamp(34px, 4.5vw, 64px);
+  line-height: 1.05;
+  font-weight: 800;
+  text-shadow: 0 14px 34px rgba(0,0,0,.35);
+}
+
+/* =========================
+   Sections (se le usi)
+   ========================= */
+.dbl-section{
+  padding: 86px 0;
+}
+
+.dbl-container{
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Keep final CTA wide like internal pages (Servizi/Contatti) */
+.dbl-cta .dbl-cta__inner.dbl-container{
+  width: min(1600px, calc(100% - 48px));
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dbl-h2{
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0 0 18px 0;
+}
+
+.dbl-muted{
+  color: var(--dbl-muted);
+}
+
+.dbl-page-intro{
+  text-align: center;
+  margin: -22px auto 42px;
+  white-space: nowrap;
+}
+
+.dbl-list-plain{
+  list-style: none;
+  padding-left: 0;
+  margin-top: 14px;
+}
+
+.dbl-list-plain li{
+  margin-bottom: 6px;
+}
+
+.dbl-about-story p{
+  max-width: none;
+  text-align: center;
+}
+
+.dbl-about-story h2{
+  text-align: center;
+}
+
+@media (max-width: 900px){
+  .dbl-page-intro{
+    white-space: normal;
+  }
+}
+
+/* =========================
+   Gallery (Portfolio 3x3)
+   ========================= */
+.dbl-gallery{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 26px 0 10px 0;
+}
+
+.dbl-gallery a{
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--dbl-surface);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: var(--dbl-shadow);
+  transform: translateZ(0);
+}
+
+.dbl-gallery img{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform .25s ease;
+}
+
+.dbl-gallery a:hover img{
+  transform: scale(1.02);
+}
+
+.dbl-btn-row{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.dbl-btn-row--center{
+  justify-content: center;
+}
+
+.dbl-portfolio-note{
+  text-align: center;
+  margin: 34px auto 20px;
+}
+
+.dbl-contact-form-wrap{
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.dbl-form{
+  display: grid;
+  gap: 14px;
+}
+
+.dbl-form label{
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.dbl-form__grid{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dbl-form input,
+.dbl-form select,
+.dbl-form textarea{
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.04);
+  color: var(--dbl-text);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.dbl-form select{
+  background: #0b0b0b;
+}
+
+.dbl-form select option{
+  background: #0b0b0b;
+  color: var(--dbl-text);
+}
+
+.dbl-form textarea{
+  resize: vertical;
+  min-height: 140px;
+}
+
+.dbl-form input:focus,
+.dbl-form select:focus,
+.dbl-form textarea:focus{
+  outline: none;
+  border-color: rgba(201,134,70,.9);
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .dbl-gallery{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dbl-nav{ width: calc(100% - 28px); }
+  .dbl-brand{ font-size: 18px; }
+  .dbl-form__grid{ grid-template-columns: 1fr; }
+}
+@media (max-width: 560px){
+  .dbl-gallery{ grid-template-columns: 1fr; }
+  .dbl-menu{ gap: 14px; }
+}

@@ -1,0 +1,12 @@
+{{- if site.Menus.main -}}
+<ul class="menu dbl-menu">
+  {{- range site.Menus.main -}}
+    <li class="dbl-menu__item">
+      <a class="dbl-menu__link" href="{{ .URL | relLangURL }}"
+         {{- if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) -}} aria-current="page"{{- end -}}>
+        {{ .Name }}
+      </a>
+    </li>
+  {{- end -}}
+</ul>
+{{- end -}}

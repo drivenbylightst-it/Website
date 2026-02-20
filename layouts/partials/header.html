@@ -1,0 +1,34 @@
+<header class="header dbl-header">
+  <nav class="nav dbl-nav">
+    <div class="logo dbl-logo">
+      {{- $logo := site.Params.label.icon -}}
+      <a href="{{ site.BaseURL }}" accesskey="h" title="{{ site.Title }}">
+        {{- if $logo -}}
+          <img src="{{ $logo | relURL }}" alt="{{ site.Title }}" class="dbl-logo__img">
+        {{- end -}}
+        <span class="dbl-logo__text">{{ site.Title }}</span>
+      </a>
+    </div>
+
+    <div class="dbl-nav__center">
+      {{- partial "menu.html" . -}}
+    </div>
+
+    <div class="dbl-nav__right">
+      <a class="dbl-btn dbl-btn--primary dbl-hireme" href="/contact/">Contattami</a>
+    </div>
+  </nav>
+</header>
+<script>
+  (function () {
+    var header = document.querySelector(".dbl-header");
+    if (!header) return;
+
+    function updateHeaderState() {
+      header.classList.toggle("dbl-header--scrolled", window.scrollY > 10);
+    }
+
+    updateHeaderState();
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+  })();
+</script>

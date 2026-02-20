@@ -1,0 +1,290 @@
+{{ define "main" }}
+
+<!-- Flag Home (per CSS only-home) + reset wrapper PaperMod -->
+<script>
+  document.documentElement.classList.add('dbl-is-home');
+</script>
+
+<style>
+  /* PaperMod wrapper: full-bleed SOLO in Home */
+  .main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  #dbl-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+  }
+
+  #dbl-lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #dbl-lightbox img {
+    max-width: 92%;
+    max-height: 92%;
+    border-radius: 10px;
+  }
+
+  #dbl-lightbox button {
+    position: absolute;
+    border: 0;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    cursor: pointer;
+  }
+
+  #dbl-lightbox button:hover {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .dbl-close {
+    top: 18px;
+    right: 26px;
+    font-size: 40px;
+    line-height: 1;
+    padding: 8px 12px;
+  }
+
+  .dbl-prev,
+  .dbl-next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 54px;
+    line-height: 1;
+    padding: 10px 16px;
+  }
+
+  .dbl-prev { left: 18px; }
+  .dbl-next { right: 18px; }
+</style>
+
+<link rel="preload" as="image" href="/images/home/hero.jpg">
+
+<div class="dbl-home">
+
+  <!-- HERO -->
+  <section class="dbl-hero" style="--dbl-hero-img: url('/images/home/hero.jpg'); --dbl-hero-size: 135%; --dbl-hero-pos: 50% 38%; height: clamp(490px, 62vh, 680px); min-height: 490px;">
+    <div class="dbl-hero__overlay"></div>
+
+    <div class="dbl-hero__inner">
+      <h1 class="dbl-hero__title">
+        Fotografo e Videomaker<br>
+        Professionista per<br>
+        Aziende e Privati
+      </h1>
+
+      <a class="dbl-btn dbl-btn--primary dbl-hero-btn" href="/portfolio/">
+        Visualizza Portfolio
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ABOUT SPLIT -->
+  <section class="dbl-section dbl-about">
+    <div class="dbl-container dbl-split">
+      <div class="dbl-split__left">
+        <h2 class="dbl-h2">Ciao, mi chiamo Tiziano!</h2>
+
+        <div class="dbl-text">
+          <p>
+            Sono un fotografo e videomaker automotive. Creo contenuti cinematografici, dinamici e curati nei minimi dettagli pensati per valorizzare ogni veicolo senza complicare la vita al cliente.
+            </p>
+          <p>
+            Il mio approccio è semplice: pianificazione precisa, esecuzione rapida e grande attenzione alla luce, ai colori e al movimento. Guardo ogni progetto come un lavoro su misura, non come un pacchetto preconfezionato.
+          </p>
+          <p>
+             Dallo shooting alla post-produzione, seguo tutto in prima persona. Niente scorciatoie, niente preset standard. Solo tecnica, esperienza e passione reale per raccontare il carattere delle auto che fotografo.
+          </p>
+        </div>
+
+        <div class="dbl-actions">
+          <a class="dbl-btn dbl-btn--primary" href="/about/">Leggi di più</a>
+        </div>
+      </div>
+
+      <div class="dbl-split__right">
+        <div class="dbl-cardimg">
+          <img src="/images/home/about.jpg" alt="About photo" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SPECIALIZE + STAT -->
+  <section class="dbl-section dbl-specialize">
+    <div class="dbl-container dbl-specialize__grid">
+      <div>
+        <h2 class="dbl-h2">Sono specializzato in auto,<br> moto e in linea generale<br> tutto ciò che riguarda il mondo automotive</h2>
+      </div>
+
+      <div class="dbl-stat">
+        <div class="dbl-stat__top">
+          <div class="dbl-stat__num">100+</div>
+          <div class="dbl-stat__label">progetti realizzati</div>
+        </div>
+        <div class="dbl-stat__desc">
+           Sul set vado dritto al punto: tempi ottimizzati, idee chiare, risultato forte. Unisco tecnica e sensibilità per gestire luce, dinamica e colore in modo coerente, creando contenuti cinematografici che fanno emergere il carattere di ogni veicolo.
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICES (3 cards) -->
+  <section class="dbl-section dbl-services">
+    <div class="dbl-container">
+      <div class="dbl-cards3">
+
+        <article class="dbl-card">
+          <a class="dbl-card__img" href="/portfolio/">
+            <img src="/images/home/service-1.jpg" alt="Event Photographies" loading="lazy">
+          </a>
+          <h3 class="dbl-h3">Eventi in pista</h3>
+          <p class="dbl-muted">
+            Track day, eventi e sessioni dinamiche. Racconto l’azione in tempo reale con scatti e video ad alto impatto, catturando velocità, dettagli e atmosfera senza interrompere il flusso dell’evento.
+          </p>
+          <a class="dbl-card__link" href="/portfolio/">Visualizza Portfolio →</a>
+        </article>
+
+        <article class="dbl-card">
+          <a class="dbl-card__img" href="/portfolio/">
+            <img src="/images/home/service-2.jpg" alt="Portraits" loading="lazy">
+          </a>
+          <h3 class="dbl-h3">Shooting 1:1</h3>
+          <p class="dbl-muted">
+             Shooting dedicati a singoli veicoli o progetti speciali. Ogni auto viene valorizzata con luce studiata, composizione cinematografica e color grading personalizzato. Nessun preset, tutto su misura..
+          </p>
+          <a class="dbl-card__link" href="/portfolio/">Visualizza Portfolio →</a>
+        </article>
+
+        <article class="dbl-card">
+          <a class="dbl-card__img" href="/portfolio/">
+            <img src="/images/home/service-3.jpg" alt="Brands" loading="lazy">
+          </a>
+          <h3 class="dbl-h3">Aziende</h3>
+          <p class="dbl-muted">
+            Contenuti foto e video per concessionarie, noleggiatori, detailing e brand automotive per aumentare le vendite, migliorare la propria immagine e aumentare la presenza online.
+          </p>
+          <a class="dbl-card__link" href="/portfolio/">Visualizza Portfolio →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FEATURED PHOTOS -->
+  <section class="dbl-section dbl-featured">
+    <div class="dbl-container">
+      <h2 class="dbl-h2 dbl-center">Scatti in evidenza</h2>
+      <p class="dbl-center dbl-muted dbl-subtitle">
+        Qui alcune delle foto che ho scattato, di cui vado più fiero.
+      </p>
+
+      <div class="dbl-grid">
+        <a class="dbl-grid__item" href="/images/home/feat-1.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-1.jpg"><img src="/images/home/feat-1.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-2.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-2.jpg"><img src="/images/home/feat-2.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-3.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-3.jpg"><img src="/images/home/feat-3.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-4.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-4.jpg"><img src="/images/home/feat-4.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-5.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-5.jpg"><img src="/images/home/feat-5.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-6.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-6.jpg"><img src="/images/home/feat-6.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-7.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-7.jpg"><img src="/images/home/feat-7.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-8.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-8.jpg"><img src="/images/home/feat-8.jpg" alt="" loading="lazy"></a>
+        <a class="dbl-grid__item" href="/images/home/feat-9.jpg" data-dbl-lightbox="1" data-dbl-src="/images/home/feat-9.jpg"><img src="/images/home/feat-9.jpg" alt="" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIAL SPLIT -->
+  <section class="dbl-section dbl-testimonial">
+    <div class="dbl-container dbl-split dbl-split--reverse">
+      <div class="dbl-split__left">
+        <div class="dbl-stars" aria-label="5 stars">★★★★★</div>
+
+        <blockquote class="dbl-quote">
+          Cercavo qualcuno che sapesse valorizzare davvero la mia auto, non solo scattare due foto al volo.
+Tiziano ha curato luci, angoli e movimento con una precisione assurda.
+Il risultato è molto più di quello che mi aspettavo. Shooting rapido, zero stress e qualità altissima.
+Consigliatissimo a chi vuole contenuti automotive fatti come si deve.
+        </blockquote>
+
+        <div class="dbl-quote__author">
+          <div class="dbl-quote__name">Giambra Giulia</div>
+        </div>
+      </div>
+
+      <div class="dbl-split__right">
+        <div class="dbl-cardimg">
+          <img src="/images/home/testimonial.jpg" alt="Happy client" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
+  <section class="dbl-section dbl-process">
+    <div class="dbl-container">
+      <h2 class="dbl-h2 dbl-center">Processo facile e senza stress</h2>
+
+      <div class="dbl-steps">
+        <div class="dbl-step">
+          <div class="dbl-step__num">1</div>
+          <div class="dbl-step__title">Contatto</div>
+          <div class="dbl-step__text">Forniscimi i dettagli e le tue esigenze. Preparerò un preventivo personalizzato.</div>
+        </div>
+
+        <div class="dbl-step">
+          <div class="dbl-step__num">2</div>
+          <div class="dbl-step__title">Pianificazione della sessione</div>
+          <div class="dbl-step__text">Scegliamo luogo, stile e inquadrature. Rapida guida per preparare la sessione.</div>
+        </div>
+
+        <div class="dbl-step">
+          <div class="dbl-step__num">3</div>
+          <div class="dbl-step__title">Giorno dello shooting</div>
+          <div class="dbl-step__text">Preparazione dell'attrezzatura e del luogo di ripresa. Posizionamento del veicolo come pianificato.</div>
+        </div>
+
+        <div class="dbl-step">
+          <div class="dbl-step__num">4</div>
+          <div class="dbl-step__title">Consegna</div>
+          <div class="dbl-step__text">Invio file editati in alta risoluzione e in formato pronto per caricamento sui social.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FINAL CTA BANNER -->
+  <section class="dbl-cta" style="--dbl-cta-img: url('/images/home/cta.jpg');">
+    <div class="dbl-cta__overlay"></div>
+
+    <div class="dbl-cta__inner dbl-container">
+      <h2 class="dbl-cta__title">Pronto a prenotare<br>la tua sessione?</h2>
+
+      <div class="dbl-cta__actions">
+        <a class="dbl-btn dbl-btn--ghost" href="/contact/">Richiedi un Preventivo Gratuito</a>
+        <a class="dbl-btn dbl-btn--primary" href="/portfolio/">Vedi il Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script defer src="/lightbox.js"></script>
+{{- end -}}

@@ -1,0 +1,847 @@
+/* ============ Driven By Light - Home (The Photograph style) ============ */
+
+.dbl-home {
+  --dbl-beige: #c8a37a;
+  --dbl-beige-2: #d2b18a;
+  --dbl-text: rgba(255,255,255,.92);
+  --dbl-muted: rgba(255,255,255,.72);
+  --dbl-bg: #0e0f12;
+  --dbl-radius: 18px;
+  --dbl-max: 1120px;
+
+  background: var(--dbl-bg);
+  color: var(--dbl-text);
+}
+
+/* PaperMod sometimes constrains width; enforce full-bleed sections */
+.dbl-home .dbl-hero,
+.dbl-home .dbl-cta {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.dbl-container {
+  max-width: var(--dbl-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.dbl-section {
+  padding: 96px 0;
+}
+
+.dbl-center { text-align: center; }
+
+.dbl-h2 {
+  font-size: clamp(36px, 3.6vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 18px 0;
+}
+
+.dbl-h3 {
+  font-size: 22px;
+  margin: 18px 0 10px;
+}
+
+.dbl-text p {
+  margin: 0 0 14px 0;
+  color: var(--dbl-muted);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+.dbl-muted {
+  color: var(--dbl-muted);
+  line-height: 1.6;
+}
+
+.dbl-subtitle {
+  margin-top: 10px;
+  margin-bottom: 28px;
+}
+
+/* Buttons */
+.dbl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
+  user-select: none;
+}
+
+.dbl-btn:hover { transform: translateY(-1px); filter: brightness(1.02); }
+
+.dbl-btn--primary {
+  background: var(--dbl-beige);
+  color: #fff;
+}
+
+.dbl-btn--ghost {
+  background: #fff;
+  color: var(--dbl-text);
+  border-color: rgba(255,255,255,0.55);
+}
+
+.dbl-btn--link {
+  background: transparent;
+  color: var(--dbl-beige);
+  padding: 14px 10px;
+}
+
+.dbl-actions { display: flex; gap: 18px; align-items: center; margin-top: 22px; flex-wrap: wrap; }
+
+/* HERO */
+.dbl-hero {
+  position: relative;
+  min-height: var(--dbl-hero-min-h, 520px);
+  height: var(--dbl-hero-h, clamp(520px, 66vh, 720px));
+  background-image: var(--dbl-hero-img);
+  background-size: var(--dbl-hero-size, cover);
+  background-position: var(--dbl-hero-pos, center);
+  display: grid;
+  place-items: center;
+}
+
+.dbl-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25));
+}
+
+.dbl-hero__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 18px;
+}
+
+.dbl-hero__title {
+  color: #fff;
+  font-size: clamp(34px, 4.6vw, 62px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  margin: 0 0 22px 0;
+  font-weight: 700;
+}
+
+/* Split */
+.dbl-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
+.dbl-split--reverse {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+.dbl-split--reverse .dbl-split__left { order: 2; }
+.dbl-split--reverse .dbl-split__right { order: 1; }
+
+.dbl-cardimg {
+  border-radius: var(--dbl-radius);
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.dbl-cardimg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Specialize + stat */
+.dbl-specialize__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(24px, 3vw, 48px);
+  align-items: start;
+}
+
+.dbl-stat {
+  padding-top: 10px;
+}
+
+.dbl-stat__top {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.dbl-stat__num {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dbl-stat__label {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dbl-stat__desc {
+  color: var(--dbl-muted);
+  border-left: 3px solid var(--dbl-beige);
+  padding-left: 14px;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+/* Services cards */
+.dbl-cards3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
+}
+
+.dbl-card__img {
+  display: block;
+  border-radius: var(--dbl-radius);
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.dbl-card__img img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.dbl-card__link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--dbl-beige);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Featured grid (like screenshot) */
+.dbl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.dbl-grid__item {
+  border-radius: var(--dbl-radius);
+  overflow: hidden;
+  background: #f2f2f2;
+  display: block;
+}
+
+.dbl-grid__item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.dbl-grid__item--wide {
+  grid-column: span 1;
+}
+
+.dbl-grid__item--wide img {
+  height: 340px;
+}
+
+/* Testimonial */
+.dbl-stars {
+  color: #f2c94c;
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.dbl-quote {
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--dbl-text);
+  max-width: 58ch;
+}
+
+.dbl-quote__author {
+  margin-top: 10px;
+}
+
+.dbl-quote__name {
+  font-weight: 700;
+}
+
+.dbl-quote__meta {
+  color: var(--dbl-muted);
+  margin-top: 2px;
+}
+
+/* Process */
+.dbl-steps {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  text-align: center;
+}
+
+.dbl-step__num {
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  border: 2px solid rgba(0,0,0,0.08);
+  margin: 0 auto 14px auto;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.dbl-step__title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.dbl-step__text {
+  color: var(--dbl-muted);
+  line-height: 1.6;
+  max-width: 22ch;
+  margin: 0 auto;
+}
+
+/* CTA banner */
+.dbl-cta {
+  position: relative;
+  min-height: 420px;
+  height: clamp(420px, 56vh, 560px);
+  background-image: var(--dbl-cta-img);
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  align-items: center;
+}
+
+.dbl-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.50), rgba(0,0,0,0.25));
+}
+
+.dbl-cta__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: calc(100% - 96px);
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.dbl-cta__inner.dbl-container {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dbl-cta__title {
+  color: #fff;
+  font-size: clamp(34px, 4.4vw, 62px);
+  line-height: 1.06;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.dbl-cta__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+@media (min-width: 1400px) {
+  .dbl-cta__inner {
+    width: calc(100% - 120px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .dbl-section { padding: 74px 0; }
+
+  .dbl-split,
+  .dbl-specialize__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dbl-split--reverse .dbl-split__left,
+  .dbl-split--reverse .dbl-split__right {
+    order: initial;
+  }
+
+  .dbl-cards3 { grid-template-columns: 1fr; }
+  .dbl-card__img img { height: 340px; }
+
+  .dbl-grid { grid-template-columns: 1fr; }
+  .dbl-grid__item img { height: 260px; }
+  .dbl-grid__item--wide img { height: 260px; }
+
+  .dbl-steps { grid-template-columns: 1fr 1fr; }
+  .dbl-cta__inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 560px) {
+  .dbl-steps { grid-template-columns: 1fr; }
+}
+
+/* ===== Home only: tame PaperMod header / remove old mega top bar ===== */
+.dbl-is-home body,
+.dbl-is-home .main {
+  margin-top: 0 !important;
+}
+
+/* Header container */
+.dbl-is-home header.header {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-bottom: 0 !important;
+}
+
+/* In PaperMod, nav is often fixed-height / padded */
+.dbl-is-home .nav {
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding: 14px 24px !important;
+}
+
+/* Kill any forced huge header height coming from old css */
+.dbl-is-home header.header,
+.dbl-is-home .nav,
+.dbl-is-home .logo,
+.dbl-is-home .logo a {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Make menu clean + readable over hero */
+.dbl-is-home .logo a,
+.dbl-is-home .menu a {
+  color: #fff !important;
+  opacity: 0.92;
+}
+
+.dbl-is-home .menu a:hover {
+  opacity: 1;
+  text-decoration: none !important;
+}
+
+/* Remove orange underline / custom “active” styles if you had them */
+.dbl-is-home .menu a.active,
+.dbl-is-home .menu a[aria-current="page"] {
+  border-bottom: 0 !important;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Put header above hero */
+.dbl-is-home header.header {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 50 !important;
+}
+
+/* Prevent hero content from hiding under header */
+.dbl-is-home .dbl-hero__inner {
+  padding-top: 80px;
+}
+
+/* If your old css adds background to the whole top area, neutralize it */
+.dbl-is-home .header,
+.dbl-is-home .nav {
+  background: transparent !important;
+}
+
+/* ===== Header layout: left brand, centered menu, right CTA ===== */
+.dbl-is-home .dbl-nav{
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding: 14px 24px !important;
+}
+
+.dbl-is-home .dbl-logo{
+  justify-self: start;
+}
+
+.dbl-is-home .dbl-nav__center{
+  justify-self: center;
+}
+
+.dbl-is-home .dbl-nav__right{
+  justify-self: end;
+}
+
+/* Center the menu items */
+.dbl-is-home .dbl-nav__center .menu{
+  display: flex !important;
+  justify-content: center !important;
+  gap: 22px;
+}
+
+/* Make logo + text more “left” and compact */
+.dbl-is-home .dbl-logo a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dbl-is-home .dbl-logo__img{
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.dbl-is-home .dbl-logo__text{
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* CTA button sizing */
+.dbl-is-home .dbl-hireme{
+  padding: 12px 18px;
+  font-size: 14px;
+}
+
+/* Responsive: stack a bit on small screens */
+@media (max-width: 900px){
+  .dbl-is-home .dbl-nav{
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo cta"
+      "menu menu";
+    row-gap: 10px;
+  }
+  .dbl-is-home .dbl-logo{ grid-area: logo; }
+  .dbl-is-home .dbl-nav__right{ grid-area: cta; }
+  .dbl-is-home .dbl-nav__center{ grid-area: menu; justify-self: start; }
+  .dbl-is-home .dbl-nav__center .menu{ justify-content: flex-start !important; flex-wrap: wrap; }
+}
+
+/* ===== Hire Me button – cinematic orange ===== */
+
+.dbl-is-home .dbl-hireme{
+  background: #B86A2C !important;
+  border: 1px solid #B86A2C !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(201,122,50,0.25);
+
+  transition: all .15s ease;
+}
+
+.dbl-is-home .dbl-hireme:hover{
+  background: #b56f2d !important;
+  border-color: #b56f2d !important;
+  box-shadow: 0 8px 22px rgba(201,122,50,0.35);
+
+  transform: translateY(-1px);
+}
+
+/* ===== HEADER: layout preciso ===== */
+
+/* più largo = logo più a sinistra, menu più centrale */
+.dbl-is-home .dbl-nav{
+  max-width: 1600px !important;  /* prima era 1120 */
+  padding: 14px 48px !important; /* più respiro ai lati */
+}
+
+/* Menu centrato, senza bullets */
+.dbl-is-home .dbl-nav__center .menu{
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 22px;
+}
+
+.dbl-is-home .dbl-nav__center .menu li{
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* se PaperMod/tuo css aggiunge separatori tipo "•" via pseudo-elemento */
+.dbl-is-home .dbl-nav__center .menu li::before,
+.dbl-is-home .dbl-nav__center .menu a::before{
+  content: none !important;
+}
+
+/* CTA Hire Me: più basso, uppercase */
+.dbl-is-home .dbl-hireme{
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+
+  padding: 10px 18px !important;  /* più basso */
+  line-height: 1 !important;
+  font-size: 13px !important;
+  border-radius: 14px;            /* meno “pillone”, più premium */
+}
+
+/* Hero button: dimensione in base al testo */
+.dbl-is-home .dbl-hero .dbl-btn{
+  padding: 12px 22px !important;
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  border-radius: 999px;
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+/* Hero content centrato come reference */
+.dbl-is-home .dbl-hero__inner{
+  text-align: center !important;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Titolo leggermente più “centrato” visivamente */
+.dbl-is-home .dbl-hero__title{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sposta leggermente verso il centro verticale */
+.dbl-is-home .dbl-hero{
+  place-items: center;
+}
+
+.dbl-is-home .dbl-hero__inner{
+  transform: translateY(10px); /* prova 10px, se vuoi più su metti -10px */
+}
+
+/* ===== HEADER: position + menu clean ===== */
+.dbl-is-home .dbl-nav{
+  max-width: 1400px !important;
+  padding: 14px 40px !important;
+}
+
+.dbl-is-home .dbl-nav__center .menu{
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 22px;
+}
+
+.dbl-is-home .dbl-nav__center .menu li{
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dbl-is-home .dbl-nav__center .menu li::before,
+.dbl-is-home .dbl-nav__center .menu a::before{
+  content: none !important;
+}
+
+/* ===== HIRE ME button ===== */
+.dbl-is-home .dbl-hireme{
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 18px !important;
+  line-height: 1 !important;
+  font-size: 13px !important;
+  border-radius: 14px;
+}
+
+/* ===== HERO: center + button sizing ===== */
+.dbl-is-home .dbl-hero__inner{
+  text-align: center !important;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dbl-is-home .dbl-hero .dbl-btn{
+  padding: 12px 22px !important;
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  width: auto !important;
+  min-width: 0 !important;
+}
+
+.dbl-is-home .dbl-hero__title{
+  padding: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== Force menu centered on viewport (desktop) ===== */
+@media (min-width: 1000px){
+  html.dbl-is-home .dbl-nav{
+    position: relative !important;
+  }
+
+  html.dbl-is-home .dbl-nav__center{
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: max-content !important;
+  }
+
+  html.dbl-is-home .dbl-nav__center .menu{
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    gap: 22px !important;
+    align-items: center !important;
+  }
+}
+
+/* ===== Logo + Brand allineamento perfetto ===== */
+
+html.dbl-is-home .dbl-logo a{
+  display: flex !important;
+  align-items: center !important;  /* centro verticale reale */
+  gap: 10px;
+}
+
+html.dbl-is-home .dbl-logo__img{
+  display: block;         /* evita baseline alignment */
+  height: 70px;           /* regola se serve */
+  width: auto;
+}
+
+html.dbl-is-home .dbl-logo__text{
+  line-height: 1 !important;   /* elimina spazio verticale extra */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* =========================================================
+   Driven By Light — Home polish (premium + clean)
+   incolla IN FONDO a drivenbylight-home.css
+   ========================================================= */
+
+/* HEADER spacing */
+@media (min-width: 1000px){
+  html.dbl-is-home .dbl-nav{
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+}
+
+/* MENU: typography + spacing (editoriale) */
+html.dbl-is-home .dbl-nav__center .menu a{
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none;
+  opacity: 0.92;
+  position: relative;
+  padding: 6px 2px !important; /* area clic migliore senza spostare layout */
+}
+
+html.dbl-is-home .dbl-nav__center .menu a:hover{
+  opacity: 1;
+  text-decoration: none !important;
+}
+
+/* Underline “premium” (hover + current) */
+html.dbl-is-home .dbl-nav__center .menu a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.85);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .16s ease, opacity .16s ease;
+  opacity: 0.0;
+}
+
+html.dbl-is-home .dbl-nav__center .menu a:hover::after{
+  transform: scaleX(1);
+  opacity: 0.85;
+}
+
+/* pagina corrente */
+html.dbl-is-home .dbl-nav__center .menu a[aria-current="page"]::after,
+html.dbl-is-home .dbl-nav__center .menu a.active::after{
+  transform: scaleX(1);
+  opacity: 0.95;
+}
+
+/* CTA HIRE ME: più “luxury” */
+html.dbl-is-home .dbl-hireme{
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px !important;
+  padding: 10px 16px !important;
+  border-radius: 14px !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22) !important;
+}
+
+/* HERO title: più cinematografico */
+html.dbl-is-home .dbl-hero__inner{
+  max-width: 980px !important;
+}
+
+html.dbl-is-home .dbl-hero__title{
+  letter-spacing: -0.015em;  /* micro “editorial” */
+  line-height: 1.06 !important;
+  margin-bottom: 22px !important;
+  text-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+
+/* HERO button: proporzionato + hover premium */
+html.dbl-is-home .dbl-hero-btn{
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px !important;
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  border-radius: 999px !important;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
+
+html.dbl-is-home .dbl-hero-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.32);
+  filter: brightness(1.02);
+}
+
+/* Keep header visible while scrolling on Home too */
+html.dbl-is-home header.header{
+  position: fixed !important;
+}
+
+html.dbl-is-home header.header.dbl-header--scrolled{
+  background: rgba(10,12,16,.72) !important;
+  border-bottom: 1px solid rgba(255,255,255,.12) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}

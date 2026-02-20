@@ -1,0 +1,232 @@
+/* Responsive hardening: keep layout stable on desktop + mobile */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .dbl-header {
+    height: auto;
+    min-height: 64px;
+    padding: 8px 0;
+  }
+
+  .dbl-nav {
+    width: calc(100% - 24px) !important;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo cta"
+      "menu menu";
+    gap: 10px;
+  }
+
+  .dbl-logo {
+    grid-area: logo;
+    min-width: 0;
+  }
+
+  .dbl-nav__center {
+    grid-area: menu;
+    justify-content: flex-start;
+  }
+
+  .dbl-nav__right {
+    grid-area: cta;
+    justify-content: flex-end;
+  }
+
+  .dbl-menu {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    column-gap: 14px;
+  }
+
+  .dbl-menu a {
+    font-size: 12px;
+  }
+
+  .dbl-logo__img {
+    height: 36px !important;
+  }
+
+  .dbl-logo__text {
+    font-size: 16px;
+  }
+
+  .dbl-hireme {
+    padding: 9px 12px !important;
+    font-size: 11px !important;
+  }
+
+  .dbl-section,
+  .dbl-page .dbl-section {
+    padding: 56px 0 !important;
+  }
+
+  .dbl-hero,
+  .dbl-home .dbl-hero,
+  .dbl-page .dbl-hero {
+    min-height: 420px !important;
+    height: clamp(420px, 70vh, 560px) !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .dbl-hero__inner {
+    width: calc(100% - 24px) !important;
+    padding-top: 90px !important;
+  }
+
+  .dbl-hero__title {
+    font-size: clamp(28px, 8vw, 44px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .dbl-container,
+  .dbl-page .dbl-container {
+    width: calc(100% - 24px) !important;
+  }
+
+  .dbl-cta {
+    min-height: 360px !important;
+    height: auto !important;
+  }
+
+  .dbl-cta__inner {
+    width: calc(100% - 24px) !important;
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+    gap: 14px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .dbl-cta__title {
+    font-size: clamp(30px, 9vw, 44px) !important;
+  }
+
+  .dbl-cta__actions {
+    width: 100%;
+    justify-content: flex-start !important;
+  }
+
+  .dbl-cta__actions .dbl-btn {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .dbl-form__grid,
+  .dbl-split,
+  .dbl-specialize__grid,
+  .dbl-cards3,
+  .dbl-steps,
+  .dbl-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dbl-grid,
+  .dbl-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .dbl-grid__item img {
+    height: 220px !important;
+  }
+
+  .dbl-page-intro {
+    white-space: normal !important;
+    margin: -10px auto 26px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .dbl-nav {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "menu"
+      "cta";
+  }
+
+  .dbl-nav__right {
+    justify-content: flex-start;
+  }
+
+  .dbl-nav__right .dbl-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    text-align: center !important;
+  }
+
+  article,
+  section,
+  .dbl-text,
+  .dbl-card,
+  .dbl-page-intro,
+  .dbl-quote,
+  .dbl-cta__inner,
+  .dbl-cta__actions,
+  .dbl-btn-row,
+  .dbl-form label,
+  .dbl-list-plain li {
+    text-align: center !important;
+  }
+
+  .dbl-text p,
+  .dbl-muted,
+  .dbl-quote,
+  .dbl-step__text,
+  .dbl-stat__desc,
+  .dbl-portfolio-note,
+  .dbl-quote__author {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  .dbl-actions,
+  .dbl-btn-row,
+  .dbl-cta__actions {
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .dbl-btn-row .dbl-btn,
+  .dbl-actions .dbl-btn {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body :is(h1, h2, h3, h4, h5, h6, p, a, li, span, label, button, input, textarea, select, blockquote, figcaption) {
+    font-size: 50% !important;
+  }
+
+  #dbl-lightbox img {
+    max-width: 96%;
+    max-height: 86%;
+  }
+
+  .dbl-close {
+    top: 10px;
+    right: 12px;
+    font-size: 34px;
+  }
+
+  .dbl-prev,
+  .dbl-next {
+    font-size: 40px;
+    padding: 8px 12px;
+  }
+}

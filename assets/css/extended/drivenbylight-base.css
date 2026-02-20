@@ -1,0 +1,113 @@
+/* =========================================================
+   Driven By Light — Base (tutte le pagine)
+   ========================================================= */
+
+:root{
+  /* accent arancione “non troppo acceso” */
+  --dbl-accent: #C67A3A;
+  --dbl-accent-2: rgba(198,122,58,0.35);
+  --dbl-text: rgba(255,255,255,0.92);
+  --dbl-muted: rgba(255,255,255,0.68);
+}
+
+/* Container più “premium” — make full-bleed for fullscreen layout */
+.main{
+  max-width: none;
+  padding: 0;
+}
+
+/* Titoli coerenti (PaperMod + tuo mood) */
+.post-title, h1, h2, h3{
+  letter-spacing: -0.01em;
+}
+
+/* Bottoni riutilizzabili */
+.dbl-btn-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.dbl-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  text-decoration: none !important;
+  line-height: 1.1;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.dbl-btn--primary{
+  background: var(--dbl-accent);
+  border-color: rgba(0,0,0,0.18);
+  color: #111 !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+}
+
+.dbl-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.30);
+  filter: brightness(1.02);
+}
+
+/* Gallery (portfolio) */
+.dbl-gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 22px 0;
+}
+
+@media (max-width: 900px){
+  .dbl-gallery{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .dbl-gallery{ grid-template-columns: 1fr; }
+}
+
+.dbl-gallery a{
+  display: block;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.18);
+}
+
+.dbl-gallery img{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.dbl-gallery a:hover img{
+  transform: scale(1.02);
+  filter: contrast(1.02) saturate(1.03);
+}
+
+/* Blocchi “card” per servizi/contatti */
+.dbl-card{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.18);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.dbl-grid-2{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+}
+@media (max-width: 900px){
+  .dbl-grid-2{ grid-template-columns: 1fr; }
+}
+
+.dbl-muted{
+  color: var(--dbl-muted);
+}
