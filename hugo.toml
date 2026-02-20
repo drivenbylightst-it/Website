@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://www.drivenbylight.it/"
 canonifyURLs = true
 relativeURLs = false
 languageCode = "it-it"
