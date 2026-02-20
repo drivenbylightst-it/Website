@@ -203,10 +203,41 @@ video {
     align-items: center !important;
   }
 
+  .dbl-cta__inner {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .dbl-cta__title {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .dbl-cta__actions {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .dbl-cta__actions .dbl-btn {
+    width: auto !important;
+    max-width: none !important;
+  }
+
   .dbl-btn-row .dbl-btn,
   .dbl-actions .dbl-btn {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  .dbl-btn {
+    filter: saturate(1.35) brightness(1.05) !important;
+  }
+
+  .dbl-btn--primary {
+    filter: saturate(1.45) brightness(1.08) !important;
   }
 
   body :is(h1, h2, h3, h4, h5, h6, p, a, li, span, label, button, input, textarea, select, blockquote, figcaption) {
