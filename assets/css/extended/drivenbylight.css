@@ -351,11 +351,13 @@ html.dbl-is-home .main{
 
 .dbl-form select{
   background: #0b0b0b;
+  font-family: inherit;
 }
 
 .dbl-form select option{
   background: #0b0b0b;
   color: var(--dbl-text);
+  font-family: inherit;
 }
 
 .dbl-form textarea{

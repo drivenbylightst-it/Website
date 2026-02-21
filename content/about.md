@@ -11,7 +11,8 @@ url: "/about/"
 <div class="dbl-card dbl-about-story">
 <h2 style="margin-bottom:18px;">La mia storia</h2>
 <p>
-Mi chiamo Tiziano Sapuppo e vivo al confine est dell'Hinterland milanese.<br> 
+Mi chiamo Tiziano Sapuppo e vivo al confine est dell'Hinterland milanese.</p>
+<p>
 Per dieci anni ho lavorato nell’azienda di famiglia, affrontando responsabilità,<br> 
 imprevisti e giornate che iniziavano presto e finivano tardi.<br>
 È lì che ho imparato cosa significa non tirarsi indietro, risolvere problemi e portare a termine ciò che si inizia.
@@ -32,3 +33,4 @@ Solo impegno reale trasformato in immagini che parlano davvero.
 <a class="dbl-btn" href="/portfolio/">Vedi il Portfolio -></a>
 </div>
 </div>
+

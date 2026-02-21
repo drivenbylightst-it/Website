@@ -290,7 +290,17 @@ video {
   html.dbl-is-page .dbl-servizi-content .dbl-page-intro,
   html.dbl-is-page .dbl-servizi-content .dbl-card h2,
   html.dbl-is-page .dbl-servizi-content .dbl-card .dbl-list-plain li {
-    font-size: 95% !important;
+    font-size: 90% !important;
+  }
+
+  html.dbl-is-page .dbl-servizi-content .dbl-page-intro {
+    font-size: 105% !important;
+    font-weight: 700 !important;
+  }
+
+  html.dbl-is-page .dbl-servizi-content .dbl-card .dbl-servizi-card-title {
+    font-size: 105% !important;
+    font-weight: 700 !important;
   }
 
   html.dbl-is-page .dbl-servizi-content .dbl-btn-row .dbl-btn {
@@ -304,6 +314,12 @@ video {
   html.dbl-is-page .dbl-contatti-content .dbl-card a:not(.dbl-btn),
   html.dbl-is-page .dbl-contatti-content .dbl-card .dbl-list-plain li {
     font-size: 95% !important;
+  }
+
+  html.dbl-is-page .dbl-contatti-content .dbl-page-intro,
+  html.dbl-is-page .dbl-contatti-content .dbl-card h2 {
+    font-size: 105% !important;
+    font-weight: 700 !important;
   }
 
   /* Contatti only: increase the two CTA buttons on mobile */
@@ -321,6 +337,17 @@ video {
     font-size: 95% !important;
   }
 
+  html.dbl-is-page .dbl-page .dbl-page-intro,
+  html.dbl-is-page .dbl-contact-form-wrap > h2 {
+    font-size: 105% !important;
+    font-weight: 700 !important;
+  }
+
+  html.dbl-is-page .dbl-contact-form-wrap > p.dbl-muted {
+    font-size: 95% !important;
+    font-weight: 400 !important;
+  }
+
   /* Dropdown and button at 75% */
   html.dbl-is-page #dbl-contact-form select,
   html.dbl-is-page #dbl-contact-form option {
@@ -333,12 +360,17 @@ video {
 
   /* About only */
   html.dbl-is-page .dbl-about-content .dbl-page-intro {
-    font-size: 100% !important;
+    font-size: 105% !important;
+    font-weight: 700 !important;
   }
 
-  html.dbl-is-page .dbl-about-content .dbl-about-story h2,
-  html.dbl-is-page .dbl-about-content .dbl-about-story p {
-    font-size: 95% !important;
+  html.dbl-is-page .dbl-about-content .dbl-about-story :is(h2, p) {
+    font-size: 90% !important;
+  }
+
+  html.dbl-is-page .dbl-about-content .dbl-about-story h2 {
+    font-size: 105% !important;
+    font-weight: 700 !important;
   }
 
   html.dbl-is-page .dbl-about-content .dbl-btn-row .dbl-btn {

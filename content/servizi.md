@@ -9,7 +9,7 @@ description: "Driven By Light"
 
 <div class="dbl-grid-2">
 <div class="dbl-card">
-<h2>Fotografia Automotive</h2>
+<h2 class="dbl-servizi-card-title">Fotografia Automotive</h2>
 <ul class="dbl-list-plain">
 <li>Shooting completo esterni e interni</li>
 <li>Dettagli tecnici ed estetici</li>
@@ -18,7 +18,7 @@ description: "Driven By Light"
 </ul>
 </div>
 <div class="dbl-card">
-<h2>Video Cinematic</h2>
+<h2 class="dbl-servizi-card-title">Video Cinematic</h2>
 <ul class="dbl-list-plain">
 <li>Walkaround dinamici</li>
 <li>Reel per social</li>
@@ -27,7 +27,7 @@ description: "Driven By Light"
 </ul>
 </div>
 <div class="dbl-card">
-<h2>Rolling Shots</h2>
+<h2 class="dbl-servizi-card-title">Rolling Shots</h2>
 <ul class="dbl-list-plain">
 <li>Scatti in movimento con camera-car</li>
 <li>Inquadrature studiate per trasmettere velocità e carattere</li>
@@ -35,7 +35,7 @@ description: "Driven By Light"
 </ul>
 </div>
 <div class="dbl-card">
-<h2>Metodo</h2>
+<h2 class="dbl-servizi-card-title">Metodo</h2>
 <ol class="dbl-list-plain">
 <li>Analisi del progetto</li>
 <li>Pianificazione rapida e precisa</li>

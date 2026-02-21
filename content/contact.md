@@ -38,7 +38,7 @@ Telefono
 </label>
 
 <label>
-Citta
+Città
 <input type="text" name="city">
 </label>
 </div>
