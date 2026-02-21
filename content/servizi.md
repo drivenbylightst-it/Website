@@ -1,9 +1,10 @@
 ﻿---
 title: "Servizi"
 layout: "page"
-description: "Contenuti automotive cinematici pensati per valorizzare il veicolo e semplificare il lavoro del cliente."
+description: "Driven By Light"
 ---
 
+<div class="dbl-servizi-content">
 <h2 class="dbl-page-intro">Offro contenuti automotive cinematici pensati per valorizzare ogni veicolo e semplificare il lavoro del cliente.</h2>
 
 <div class="dbl-grid-2">
@@ -42,6 +43,7 @@ description: "Contenuti automotive cinematici pensati per valorizzare il veicolo
 <li>Post-produzione curata</li>
 <li>Consegna ottimizzata per canale</li>
 </ol>
+</div>
 </div>
 </div>
 

@@ -53,11 +53,11 @@ video {
   }
 
   .dbl-logo__img {
-    height: 36px !important;
+    height: calc(36px * 1.15) !important;
   }
 
   .dbl-logo__text {
-    font-size: 16px;
+    font-size: calc(16px * 1.2) !important;
   }
 
   .dbl-hireme {
@@ -242,6 +242,89 @@ video {
 
   body :is(h1, h2, h3, h4, h5, h6, p, a, li, span, label, button, input, textarea, select, blockquote, figcaption) {
     font-size: 50% !important;
+  }
+
+  /* Home only: +5% for "Ciao, mi chiamo Tiziano!" and the paragraph below */
+  html.dbl-is-home .dbl-about .dbl-split__left > .dbl-h2 {
+    font-size: calc(clamp(36px, 3.6vw, 54px) * 0.525) !important;
+  }
+
+  html.dbl-is-home .dbl-about .dbl-split__left .dbl-text > p {
+    font-size: 95% !important;
+  }
+
+  /* Home only: match screenshot sections at 95% on mobile */
+  html.dbl-is-home .dbl-specialize .dbl-h2,
+  html.dbl-is-home .dbl-featured .dbl-h2,
+  html.dbl-is-home .dbl-featured .dbl-subtitle,
+  html.dbl-is-home .dbl-testimonial .dbl-quote,
+  html.dbl-is-home .dbl-process .dbl-h2 {
+    font-size: 95% !important;
+  }
+
+  html.dbl-is-home .dbl-about .dbl-actions .dbl-btn {
+    font-size: 65% !important;
+  }
+
+  /* Portfolio only: match the same mobile text scaling */
+  html.dbl-is-portfolio .dbl-page-intro,
+  html.dbl-is-portfolio .dbl-portfolio-note {
+    font-size: 95% !important;
+  }
+
+  /* Servizi only: same mobile text scaling as Homepage */
+  html.dbl-is-page .dbl-servizi-content .dbl-page-intro,
+  html.dbl-is-page .dbl-servizi-content .dbl-card h2,
+  html.dbl-is-page .dbl-servizi-content .dbl-card .dbl-list-plain li {
+    font-size: 95% !important;
+  }
+
+  /* Contatti only: same mobile text scaling, excluding button labels */
+  html.dbl-is-page .dbl-contatti-content .dbl-page-intro,
+  html.dbl-is-page .dbl-contatti-content .dbl-card h2,
+  html.dbl-is-page .dbl-contatti-content .dbl-card p,
+  html.dbl-is-page .dbl-contatti-content .dbl-card a:not(.dbl-btn),
+  html.dbl-is-page .dbl-contatti-content .dbl-card .dbl-list-plain li {
+    font-size: 95% !important;
+  }
+
+  /* Contatti only: increase the two CTA buttons on mobile */
+  html.dbl-is-page .dbl-contatti-content .dbl-btn-row .dbl-btn {
+    font-size: 75% !important;
+  }
+
+  /* Contact (/contact/) only: mobile form typography */
+  html.dbl-is-page #dbl-contact-form,
+  html.dbl-is-page .dbl-contact-form-wrap {
+    font-size: 95% !important;
+  }
+
+  html.dbl-is-page #dbl-contact-form :is(label, p, h2, input, textarea) {
+    font-size: 95% !important;
+  }
+
+  /* Dropdown and button at 75% */
+  html.dbl-is-page #dbl-contact-form select,
+  html.dbl-is-page #dbl-contact-form option {
+    font-size: 85% !important;
+  }
+
+  html.dbl-is-page #dbl-contact-form button[type="submit"] {
+    font-size: 75% !important;
+  }
+
+  /* About only */
+  html.dbl-is-page .dbl-about-content .dbl-page-intro {
+    font-size: 100% !important;
+  }
+
+  html.dbl-is-page .dbl-about-content .dbl-about-story h2,
+  html.dbl-is-page .dbl-about-content .dbl-about-story p {
+    font-size: 95% !important;
+  }
+
+  html.dbl-is-page .dbl-about-content .dbl-btn-row .dbl-btn {
+    font-size: 75% !important;
   }
 
   #dbl-lightbox img {

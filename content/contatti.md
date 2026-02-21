@@ -1,9 +1,10 @@
 ﻿---
 title: "Contatti"
 layout: "page"
-description: "Se cerchi contenuti automotive di qualita reale, parliamone."
+description: "Driven By Light"
 ---
 
+<div class="dbl-contatti-content">
 <h2 class="dbl-page-intro">Se cerchi contenuti automotive di qualita reale, parliamone.</h2>
 
 <div class="dbl-grid-2">
@@ -29,5 +30,6 @@ description: "Se cerchi contenuti automotive di qualita reale, parliamone."
 <li>Che auto hai</li>
 <li>Che tipo di contenuto ti serve (foto/video/entrambi)</li>
 </ul>
+</div>
 </div>
 </div>

@@ -5,6 +5,7 @@ description: "Il mio approccio alla fotografia e al video automotive."
 url: "/about/"
 ---
 
+<div class="dbl-about-content">
 <h2 class="dbl-page-intro">Ciao!</h2>
 
 <div class="dbl-card dbl-about-story">
@@ -29,4 +30,5 @@ Solo impegno reale trasformato in immagini che parlano davvero.
 <div class="dbl-btn-row dbl-btn-row--center">
 <a class="dbl-btn dbl-btn--primary" href="/contatti/">Contattami -></a>
 <a class="dbl-btn" href="/portfolio/">Vedi il Portfolio -></a>
+</div>
 </div>

@@ -1,6 +1,6 @@
 ﻿---
 title: "Portfolio"
-description: "Una selezione di scatti e frame: fotografia statica, dettagli e movimento."
+description: "Driven By Light"
 url: "/portfolio/"
 ---
 
