@@ -45,9 +45,9 @@ description: "Driven By Light"
 </ol>
 </div>
 </div>
-</div>
 
 <div class="dbl-btn-row dbl-btn-row--center">
 <a class="dbl-btn dbl-btn--primary" href="/contact/">Contattami -></a>
 <a class="dbl-btn" href="/portfolio/">Guarda il Portfolio -></a>
+</div>
 </div>

@@ -224,6 +224,7 @@ video {
   .dbl-cta__actions .dbl-btn {
     width: auto !important;
     max-width: none !important;
+    font-size: 65% !important;
   }
 
   .dbl-btn-row .dbl-btn,
@@ -262,6 +263,15 @@ video {
     font-size: 95% !important;
   }
 
+  html.dbl-is-home .dbl-services .dbl-h3 {
+    font-size: 70% !important;
+  }
+
+  html.dbl-is-home .dbl-services .dbl-muted,
+  html.dbl-is-home .dbl-services .dbl-card__link {
+    font-size: 60% !important;
+  }
+
   html.dbl-is-home .dbl-about .dbl-actions .dbl-btn {
     font-size: 65% !important;
   }
@@ -272,11 +282,19 @@ video {
     font-size: 95% !important;
   }
 
+  html.dbl-is-portfolio .dbl-btn-row .dbl-btn {
+    font-size: 75% !important;
+  }
+
   /* Servizi only: same mobile text scaling as Homepage */
   html.dbl-is-page .dbl-servizi-content .dbl-page-intro,
   html.dbl-is-page .dbl-servizi-content .dbl-card h2,
   html.dbl-is-page .dbl-servizi-content .dbl-card .dbl-list-plain li {
     font-size: 95% !important;
+  }
+
+  html.dbl-is-page .dbl-servizi-content .dbl-btn-row .dbl-btn {
+    font-size: 75% !important;
   }
 
   /* Contatti only: same mobile text scaling, excluding button labels */
