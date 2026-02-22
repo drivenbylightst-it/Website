@@ -4,8 +4,8 @@
 
 :root{
   /* accent arancione “non troppo acceso” */
-  --dbl-accent: #C67A3A;
-  --dbl-accent-2: rgba(198,122,58,0.35);
+  --dbl-accent: #F78E2B;
+  --dbl-accent-2: #E07A1E;
   --dbl-text: rgba(255,255,255,0.92);
   --dbl-muted: rgba(255,255,255,0.68);
 }

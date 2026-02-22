@@ -1,6 +1,6 @@
 ﻿---
-title: "Portfolio"
-description: "Driven By Light"
+title: "Portfolio Foto Automotive"
+description: "Driven By Light | Fotografo e Videomaker Automotive Milano Torino"
 url: "/portfolio/"
 ---
 
@@ -18,7 +18,7 @@ url: "/portfolio/"
   <a href="/portfolio/09.jpg"><img src="/portfolio/09.jpg" alt="" loading="lazy"></a>
 </div>
 
-<h2 class="dbl-portfolio-note">Se vuoi un progetto con output veloce e qualita alta, scrivimi:</h2>
+<h2 class="dbl-portfolio-note">Se vuoi un progetto con output veloce e qualità alta, scrivimi:</h2>
 
 <div class="dbl-btn-row dbl-btn-row--center">
   <a class="dbl-btn" href="/contatti/">Contatti -></a>

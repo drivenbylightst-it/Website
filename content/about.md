@@ -2,6 +2,7 @@
 title: "Chi Sono"
 layout: "page"
 description: "Il mio approccio alla fotografia e al video automotive."
+heroSubtitle: "Driven By Light | Fotografo e Videomaker Automotive Milano Torino"
 url: "/about/"
 ---
 
@@ -11,20 +12,21 @@ url: "/about/"
 <div class="dbl-card dbl-about-story">
 <h2 style="margin-bottom:18px;">La mia storia</h2>
 <p>
-Mi chiamo Tiziano Sapuppo e vivo al confine est dell'Hinterland milanese.</p>
+Ciao mi chiamo Tiziano Sapuppo.</p>
 <p>
 Per dieci anni ho lavorato nell’azienda di famiglia, affrontando responsabilità,<br> 
 imprevisti e giornate che iniziavano presto e finivano tardi.<br>
-È lì che ho imparato cosa significa non tirarsi indietro, risolvere problemi e portare a termine ciò che si inizia.
+È lì che ho imparato una cosa fondamentale: non esistono scuse, esistono soluzioni.
 </p>
 <p>
-Oggi porto quella stessa mentalità nel mondo automotive.<br>
-Studio, sperimento, sbaglio, miglioro.<br>
-Creo contenuti cinematografici che uniscono tecnica, movimento e carattere.<br>
+A 28 anni mi sono fermato e ho deciso di fare di una passione una professione ma fare foto e video belli non bastano. Devono portare risultati.<br>
+Ho unito problem solving, tecnologia e passione per l’automotive creando quello che oggi è Driven By Light: un sistema visivo orientato alla vendita.<br>
+Non prometto miracoli. Studio, sperimento, miglioro.<br>
+Lavoro su metodo, processo e risultati misurabili.<br>
 Nessuna scorciatoia. Nessuna soluzione standard.
 </p>
 <p>
-Solo impegno reale trasformato in immagini che parlano davvero.
+Il mio obiettivo è semplice: aiutare aziende automotive a vendere meglio, mentre costruisco la mia indipendenza professionale.
 </p>
 </div>
 

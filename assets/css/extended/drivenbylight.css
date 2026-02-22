@@ -9,9 +9,9 @@
   --dbl-text: rgba(255,255,255,.92);
   --dbl-muted: rgba(255,255,255,.68);
 
-  /* arancione NON sparato */
-  --dbl-accent: #c98646;
-  --dbl-accent-2: #b8773c;
+  /* arancione più saturo */
+  --dbl-accent: #F78E2B;
+  --dbl-accent-2: #E07A1E;
 
   --dbl-radius: 18px;
   --dbl-shadow: 0 14px 34px rgba(0,0,0,.35);
@@ -182,6 +182,16 @@ html.dbl-is-home .main{
   background-size: var(--dbl-hero-size, cover);         /* <-- evita “allungata” brutta */
   background-position: var(--dbl-hero-pos, center);
   background-repeat: no-repeat;
+}
+
+.dbl-hero__img-seo{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .dbl-hero__overlay{

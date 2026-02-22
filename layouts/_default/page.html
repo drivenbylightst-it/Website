@@ -57,10 +57,18 @@
 <main class="dbl-page">
 
   <section class="dbl-hero dbl-hero--compact" style="--dbl-hero-img: url('{{ .Params.heroImage | default "/images/home/hero.jpg" }}');">
+    <img
+      src="/images/home/hero.jpg"
+      alt="Driven By Light – fotografia e video automotive a Milano e Torino"
+      class="dbl-hero__img-seo"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+    />
     <div class="dbl-hero__overlay"></div>
     <div class="dbl-hero__inner">
       <h1 class="dbl-hero__title">{{ .Title }}</h1>
-      <p class="dbl-hero__subtitle">Driven By Light</p>
+      <p class="dbl-hero__subtitle">{{ .Params.heroSubtitle | default "Driven By Light" }}</p>
     </div>
   </section>
 
@@ -72,18 +80,8 @@
     </div>
   </section>
 
-  <section class="dbl-cta" style="--dbl-cta-img: url('/images/home/cta.jpg');">
-    <div class="dbl-cta__overlay"></div>
-
-    <div class="dbl-cta__inner dbl-container">
-      <h2 class="dbl-cta__title">Pronto a prenotare<br>la tua sessione?</h2>
-
-      <div class="dbl-cta__actions">
-        <a class="dbl-btn dbl-btn--ghost" href="/contact/">Richiedi un Preventivo Gratuito</a>
-        <a class="dbl-btn dbl-btn--primary" href="/portfolio/">Vedi il Portfolio</a>
-      </div>
-    </div>
-  </section>
+  {{ partial "home-bottom-cta.html" . }}
 
 </main>
 {{- end -}}
+

@@ -165,7 +165,105 @@ video {
   }
 }
 
+/* Header cleanup on mobile: keep brand readable and CTA compact */
+@media (max-width: 900px) {
+  .dbl-logo a {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 0;
+    line-height: 1 !important;
+  }
+
+  .dbl-logo__img {
+    height: 30px !important;
+    width: auto !important;
+    flex: 0 0 auto;
+  }
+
+  .dbl-logo__text {
+    font-size: 14px !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+  }
+
+  .dbl-nav__right .dbl-hireme {
+    font-size: 11px !important;
+    letter-spacing: 0.03em !important;
+    padding: 8px 14px !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .dbl-nav {
+    width: calc(100% - 20px) !important;
+    grid-template-columns: auto 1fr !important;
+    grid-template-areas:
+      "logo cta"
+      "menu menu" !important;
+    align-items: center !important;
+    column-gap: 8px !important;
+  }
+
+  html.dbl-is-home .dbl-nav {
+    width: calc(100% - 8px) !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+
+  .dbl-logo {
+    justify-self: start !important;
+  }
+
+  .dbl-logo__text {
+    font-size: 13px !important;
+  }
+
+  .dbl-nav__center {
+    justify-content: center !important;
+    justify-self: center !important;
+    width: 100%;
+  }
+
+  .dbl-nav__center .menu,
+  .dbl-menu {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .dbl-nav__right {
+    justify-content: flex-end !important;
+    justify-self: end !important;
+  }
+
+  .dbl-nav__right .dbl-btn {
+    width: auto !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+  }
+}
+
 @media (max-width: 768px) {
+  /* Mobile color tuning: reduce overlay washout and recover image color depth */
+  .dbl-hero__overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.24), rgba(0,0,0,0.16)) !important;
+  }
+
+  .dbl-cta__overlay {
+    background: linear-gradient(90deg, rgba(0,0,0,0.36), rgba(0,0,0,0.18)) !important;
+  }
+
+  .dbl-cardimg img,
+  .dbl-card__img img,
+  .dbl-grid__item img,
+  .dbl-gallery img {
+    filter: saturate(1.14) contrast(1.05) brightness(1.02);
+  }
+
   body {
     text-align: center !important;
   }
@@ -234,11 +332,13 @@ video {
   }
 
   .dbl-btn {
-    filter: saturate(1.35) brightness(1.05) !important;
+    filter: saturate(1.45) brightness(1.05) !important;
   }
 
-  .dbl-btn--primary {
-    filter: saturate(1.45) brightness(1.08) !important;
+  .dbl-btn--primary,
+  .dbl-hireme,
+  .dbl-btn--hire {
+    filter: saturate(1.75) contrast(1.08) brightness(1.07) !important;
   }
 
   body :is(h1, h2, h3, h4, h5, h6, p, a, li, span, label, button, input, textarea, select, blockquote, figcaption) {
@@ -252,6 +352,21 @@ video {
 
   html.dbl-is-home .dbl-about .dbl-split__left .dbl-text > p {
     font-size: 95% !important;
+  }
+
+  html.dbl-is-home .dbl-autoferme .dbl-autoferme-title {
+    font-size: calc(clamp(36px, 3.6vw, 54px) * 0.525) !important;
+  }
+
+  html.dbl-is-home .dbl-autoferme .dbl-autoferme-sub,
+  html.dbl-is-home .dbl-autoferme .dbl-autoferme-lead,
+  html.dbl-is-home .dbl-autoferme .dbl-autoferme-bullets li {
+    font-size: 95% !important;
+  }
+
+  html.dbl-is-home .dbl-autoferme .dbl-autoferme-cta .dbl-btn {
+    font-size: 78% !important;
+    padding: 12px 20px !important;
   }
 
   /* Home only: match screenshot sections at 95% on mobile */
