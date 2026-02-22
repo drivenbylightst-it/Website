@@ -361,13 +361,23 @@ html.dbl-is-home .main{
 
 .dbl-form select{
   background: #0b0b0b;
+  color: var(--dbl-text);
   font-family: inherit;
+  font-weight: 600;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23f5efe6' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 12px 8px;
+  padding-right: 48px;
 }
 
 .dbl-form select option{
   background: #0b0b0b;
   color: var(--dbl-text);
   font-family: inherit;
+  font-weight: 600;
 }
 
 .dbl-form textarea{
@@ -393,3 +403,4 @@ html.dbl-is-home .main{
   .dbl-gallery{ grid-template-columns: 1fr; }
   .dbl-menu{ gap: 14px; }
 }
+

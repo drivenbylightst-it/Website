@@ -463,10 +463,10 @@ video {
     font-weight: 400 !important;
   }
 
-  /* Dropdown and button at 75% */
+  /* Dropdown at 95% and button at 75% */
   html.dbl-is-page #dbl-contact-form select,
   html.dbl-is-page #dbl-contact-form option {
-    font-size: 85% !important;
+    font-size: 95% !important;
   }
 
   html.dbl-is-page #dbl-contact-form button[type="submit"] {
@@ -509,3 +509,6 @@ video {
     padding: 8px 12px;
   }
 }
+
+
+

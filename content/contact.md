@@ -45,12 +45,13 @@ Città
 </div>
 
 <label>
-Tipo di servizio
+Obiettivo del progetto
 <select name="service_type">
-<option value="Fotografia Automotive">Fotografia Automotive</option>
-<option value="Video Cinematic">Video Cinematic</option>
-<option value="Rolling Shots">Rolling Shots</option>
-<option value="Pacchetto Completo">Pacchetto Completo</option>
+<option value="Fotografia Automotive">Auto ferme / annunci che non convertono</option>
+<option value="Video Cinematic">Migliorare qualità annunci online</option>
+<option value="Rolling Shots">Aumentare richieste clienti</option>
+<option value="Pacchetto Completo">Consulenza</option>
+<option value="Altro (specifica nel messaggio)">Altro (specifica nel messaggio)</option>
 </select>
 </label>
 
