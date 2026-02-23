@@ -146,6 +146,18 @@ video {
   }
 }
 
+@media (max-width: 768px) {
+  .dbl-hero__subtitle {
+    font-family: inherit !important;
+    font-size: 95% !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    width: 100%;
+    margin: 8px auto 18px !important;
+  }
+}
+
 @media (max-width: 560px) {
   .dbl-nav {
     grid-template-columns: 1fr;

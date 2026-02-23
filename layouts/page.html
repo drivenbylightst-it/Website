@@ -83,18 +83,24 @@
   {{ partial "home-bottom-cta.html" . }}
 
 </main>
-{{ if eq .RelPermalink "/contact/" }}
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  function initDblContactForm() {
     var form = document.getElementById("dbl-contact-form");
-    if (!form || !window.emailjs) return;
+    if (!form) return;
 
     var statusEl = document.getElementById("dbl-contact-status");
     var submitBtn = form.querySelector('button[type="submit"]');
     var publicKey = form.dataset.emailjsPublicKey;
     var serviceId = form.dataset.emailjsServiceId;
     var templateId = form.dataset.emailjsTemplateId;
+
+    if (!window.emailjs) {
+      if (statusEl) {
+        statusEl.textContent = "EmailJS non caricato. Disattiva eventuali blocker e ricarica la pagina.";
+      }
+      return;
+    }
 
     if (!publicKey || !serviceId || !templateId ||
         publicKey.indexOf("YOUR_") === 0 ||
@@ -114,23 +120,46 @@
       if (submitBtn) submitBtn.disabled = true;
       if (statusEl) statusEl.textContent = "Invio in corso...";
 
-      var templateParams = Object.fromEntries(new FormData(form).entries());
+      var formData = new FormData(form);
+      var templateParams = Object.fromEntries(formData.entries());
+      var emailValue = templateParams.reply_to || templateParams.from_email || templateParams.email || "";
+      var nameValue = templateParams.from_name || templateParams.name || "";
+
+      if (emailValue) {
+        templateParams.reply_to = emailValue;
+        templateParams.from_email = emailValue;
+        templateParams.email = emailValue;
+      }
+      if (nameValue) {
+        templateParams.from_name = nameValue;
+        templateParams.name = nameValue;
+      }
+      if (!templateParams.subject) {
+        templateParams.subject = "Nuova richiesta dal sito Driven By Light";
+      }
 
       emailjs.send(serviceId, templateId, templateParams)
         .then(function () {
           form.reset();
           if (statusEl) statusEl.textContent = "Messaggio inviato con successo.";
         })
-        .catch(function () {
-          if (statusEl) statusEl.textContent = "Invio non riuscito. Riprova tra poco.";
+        .catch(function (error) {
+          console.error("EmailJS error:", error);
+          var errorText = (error && (error.text || error.message || error.status)) || "errore sconosciuto";
+          if (statusEl) statusEl.textContent = "Invio non riuscito: " + errorText + ".";
         })
         .finally(function () {
           if (submitBtn) submitBtn.disabled = false;
         });
     });
-  });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initDblContactForm);
+  } else {
+    initDblContactForm();
+  }
 </script>
-{{ end }}
 {{- end -}}
 
 
