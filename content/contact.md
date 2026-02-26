@@ -60,6 +60,15 @@ Messaggio
 <textarea name="message" rows="7" required></textarea>
 </label>
 
+<div class="dbl-muted" style="display:flex;align-items:flex-start;gap:10px;margin-top:4px;">
+<input type="checkbox" name="privacy_consent" required style="margin-top:3px;width:16px;height:16px;flex:0 0 auto;">
+<span>
+Dichiaro di aver preso visione dell'informativa ai sensi del Decreto Legislativo 196/2003 e del Regolamento (UE) 2016/679 del Parlamento Europeo e Del Consiglio del 27 Aprile 2016 (GDPR).
+<a href="https://www.iubenda.com/privacy-policy/44927219" target="_blank" rel="noopener noreferrer" style="text-decoration:underline;">LEGGI L'INFORMATIVA</a>.
+(Obbligatorio)
+</span>
+</div>
+
 <div class="dbl-btn-row dbl-btn-row--center">
 <button class="dbl-btn dbl-btn--primary" type="submit">Invia richiesta</button>
 </div>
