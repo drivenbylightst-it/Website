@@ -10,6 +10,26 @@
     </div>
   </div>
 
+  <div class="dbl-cta__brand" aria-label="Profili social">
+    {{- $logo := site.Params.label.icon -}}
+    {{- if $logo -}}
+      <img src="{{ $logo | relURL }}" alt="{{ site.Title }}" class="dbl-cta__brand-logo">
+    {{- else -}}
+      <span class="dbl-cta__brand-text">{{ site.Title }}</span>
+    {{- end -}}
+    <div class="dbl-cta__social">
+      <a class="dbl-cta__social-link dbl-cta__social-link--instagram" href="https://www.instagram.com/drivenbylight.st/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.2"></circle><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"></circle></svg>
+      </a>
+      <a class="dbl-cta__social-link dbl-cta__social-link--youtube" href="https://www.youtube.com/channel/UClWVBASXwJXdS4vKC0fwK6Q" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0 2.2-.2 3.4-.4 4.1a3 3 0 0 1-2.1 2.1c-.7.2-1.9.4-7.5.4s-6.8-.2-7.5-.4a3 3 0 0 1-2.1-2.1C2.2 15.4 2 14.2 2 12s.2-3.4.4-4.1a3 3 0 0 1 2.1-2.1C5.2 5.6 6.4 5.4 12 5.4s6.8.2 7.5.4a3 3 0 0 1 2.1 2.1c.2.7.4 1.9.4 4.1Z"></path><path d="m10 9 6 3-6 3z" fill="currentColor" stroke="none"></path></svg>
+      </a>
+      <a class="dbl-cta__social-link dbl-cta__social-link--linkedin" href="https://www.linkedin.com/in/tiziano-sapuppo/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"></rect><path d="M8 10v7M8 7.5v.1M12 17v-4.2c0-1.2 1-2.2 2.2-2.2s2.2 1 2.2 2.2V17"></path></svg>
+      </a>
+    </div>
+  </div>
+
   <div class="dbl-cta__legal">
     <a href="https://www.iubenda.com/privacy-policy/44927219" class="dbl-btn dbl-btn--ghost iubenda-white iubenda-noiframe iubenda-embed" title="Privacy Policy">Informativa sulla Privacy</a>
     <a href="https://www.iubenda.com/privacy-policy/44927219/cookie-policy" class="dbl-btn dbl-btn--ghost iubenda-white iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookies</a>

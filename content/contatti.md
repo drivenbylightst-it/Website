@@ -12,10 +12,10 @@ heroSubtitle: "Driven By Light | Fotografo e Videomaker Automotive Milano Torino
 <div class="dbl-card">
 <h2>Scrivimi qui</h2></p>
 <p><strong>Email</strong><br><a href="mailto:tiziano.sapuppo@drivenbylight.it">tiziano.sapuppo@drivenbylight.it</a></p>
-<p><strong>Instagram</strong><br><a href="https://instagram.com/drivenbylight.st" target="_blank" rel="noopener noreferrer">@drivenbylight.st</a></p>
+<p><strong>Instagram</strong><br><a href="https://www.instagram.com/drivenbylight.st/" target="_blank" rel="noopener noreferrer">@drivenbylight.st</a></p>
 <div class="dbl-btn-row">
 <a class="dbl-btn dbl-btn--primary" href="/contact/">Contattami -></a>
-<a class="dbl-btn" href="https://instagram.com/drivenbylight.st" target="_blank" rel="noopener noreferrer">Vai su Instagram -></a>
+<a class="dbl-btn" href="https://www.instagram.com/drivenbylight.st/" target="_blank" rel="noopener noreferrer">Vai su Instagram -></a>
 </div>
 </div>
 <div class="dbl-card">
@@ -34,5 +34,4 @@ heroSubtitle: "Driven By Light | Fotografo e Videomaker Automotive Milano Torino
 </div>
 </div>
 </div>
-
 

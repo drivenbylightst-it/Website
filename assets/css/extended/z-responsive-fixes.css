@@ -122,6 +122,76 @@ video {
     max-width: 360px;
   }
 
+  /* CTA mobile: avoid overlap between title, actions, socials and legal links */
+  .dbl-home .dbl-cta {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 26px 0 20px !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__inner {
+    width: calc(100% - 24px) !important;
+    transform: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    gap: 12px !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__title {
+    font-size: clamp(18px, 8.4vw, 34px) !important;
+    line-height: 1.12 !important;
+    margin: 0 !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__actions {
+    width: 100% !important;
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__actions .dbl-btn {
+    width: auto !important;
+    max-width: none !important;
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__brand,
+  .dbl-home .dbl-cta .dbl-cta__legal {
+    position: static !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    margin-top: 14px !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__brand {
+    gap: 10px !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__social {
+    justify-content: center !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__legal {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__legal .dbl-btn {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+
   .dbl-form__grid,
   .dbl-split,
   .dbl-specialize__grid,
@@ -174,6 +244,13 @@ video {
   .dbl-nav__right .dbl-btn {
     width: 100%;
     max-width: 260px;
+  }
+
+  .dbl-home .dbl-cta .dbl-cta__actions .dbl-btn {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
