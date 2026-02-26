@@ -29,7 +29,7 @@ heroSubtitle: "Driven By Light | Fotografo e Videomaker Automotive Milano Torino
 <p class="dbl-muted">Nella prima mail indicami:</p>
 <ul class="dbl-list-plain">
 <li>- Che auto hai</li>
-<li>- Che tipo di contenuto ti serve (foto/video/entrambi)</li>
+<li>- Che tipo di contenuto create attualmente (foto/video/entrambi)</li>
 </ul>
 </div>
 </div>
