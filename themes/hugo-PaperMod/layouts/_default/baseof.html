@@ -25,6 +25,11 @@
     <main class="main">
         {{- block "main" . }}{{ end }}
     </main>
+    {{- if not .IsHome -}}
+        <div class="dbl-home">
+            {{ partial "home-bottom-cta.html" . }}
+        </div>
+    {{- end -}}
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
 

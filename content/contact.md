@@ -18,7 +18,7 @@ Compila il form qui sotto. Ti rispondo direttamente via email.
   id="dbl-contact-form"
   class="dbl-form"
   data-emailjs-public-key="-AUm0rkO4Pswl9mVE"
-  data-emailjs-service-id="service_cltz4w2"
+  data-emailjs-service-id="service_eesi0gp"
   data-emailjs-template-id="template_h7k2ei4"
 >
 
@@ -73,6 +73,6 @@ Dichiaro di aver preso visione dell'informativa ai sensi del Decreto Legislativo
 <button class="dbl-btn dbl-btn--primary" type="submit">Invia richiesta</button>
 </div>
 
-<p id="dbl-contact-status" class="dbl-muted" style="margin-top:14px;text-align:center;"></p>
+<p id="dbl-contact-status" class="dbl-muted" style="margin-top:14px;text-align:center;font-weight:700;width:100%;display:block;"></p>
 </form>
 </div>

@@ -80,8 +80,6 @@
     </div>
   </section>
 
-  {{ partial "home-bottom-cta.html" . }}
-
 </main>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
@@ -95,10 +93,17 @@
     var serviceId = form.dataset.emailjsServiceId;
     var templateId = form.dataset.emailjsTemplateId;
 
+    function setStatus(message) {
+      if (!statusEl) return;
+      statusEl.textContent = message;
+      statusEl.style.textAlign = "center";
+      statusEl.style.fontWeight = "700";
+      statusEl.style.display = "block";
+      statusEl.style.width = "100%";
+    }
+
     if (!window.emailjs) {
-      if (statusEl) {
-        statusEl.textContent = "EmailJS non caricato. Disattiva eventuali blocker e ricarica la pagina.";
-      }
+      setStatus("EmailJS non caricato. Disattiva eventuali blocker e ricarica la pagina.");
       return;
     }
 
@@ -106,9 +111,7 @@
         publicKey.indexOf("YOUR_") === 0 ||
         serviceId.indexOf("YOUR_") === 0 ||
         templateId.indexOf("YOUR_") === 0) {
-      if (statusEl) {
-        statusEl.textContent = "Configura prima EmailJS (public key, service id, template id).";
-      }
+      setStatus("Configura prima EmailJS (public key, service id, template id).");
       return;
     }
 
@@ -118,7 +121,7 @@
       event.preventDefault();
 
       if (submitBtn) submitBtn.disabled = true;
-      if (statusEl) statusEl.textContent = "Invio in corso...";
+      setStatus("Invio in corso...");
 
       var formData = new FormData(form);
       var templateParams = Object.fromEntries(formData.entries());
@@ -141,12 +144,12 @@
       emailjs.send(serviceId, templateId, templateParams)
         .then(function () {
           form.reset();
-          if (statusEl) statusEl.textContent = "Messaggio inviato con successo.";
+          setStatus("Messaggio inviato con successo.");
         })
         .catch(function (error) {
           console.error("EmailJS error:", error);
           var errorText = (error && (error.text || error.message || error.status)) || "errore sconosciuto";
-          if (statusEl) statusEl.textContent = "Invio non riuscito: " + errorText + ".";
+          setStatus("Invio non riuscito: " + errorText + ".");
         })
         .finally(function () {
           if (submitBtn) submitBtn.disabled = false;

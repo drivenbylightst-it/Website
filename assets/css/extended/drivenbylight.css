@@ -271,6 +271,13 @@ html.dbl-is-home .main{
   text-align: center;
 }
 
+/* About page: make "Ciao!" intro more prominent */
+html.dbl-is-page .dbl-about-content .dbl-page-intro{
+  font-size: clamp(36px, 4.2vw, 52px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
 @media (max-width: 900px){
   .dbl-page-intro{
     white-space: normal;

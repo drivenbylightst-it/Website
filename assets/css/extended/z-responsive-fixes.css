@@ -564,8 +564,8 @@ video {
 
   /* About only */
   html.dbl-is-page .dbl-about-content .dbl-page-intro {
-    font-size: 105% !important;
-    font-weight: 700 !important;
+    font-size: 115% !important;
+    font-weight: 800 !important;
   }
 
   html.dbl-is-page .dbl-about-content .dbl-about-story :is(h2, p) {
