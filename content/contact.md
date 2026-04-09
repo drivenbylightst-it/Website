@@ -73,6 +73,7 @@ Dichiaro di aver preso visione dell'informativa ai sensi del Decreto Legislativo
 <button class="dbl-btn dbl-btn--primary" type="submit">Invia richiesta</button>
 </div>
 
-<p id="dbl-contact-status" class="dbl-muted" style="margin-top:14px;text-align:center;font-weight:700;width:100%;display:block;"></p>
+<p id="dbl-contact-status" class="dbl-contact-status dbl-muted"></p>
 </form>
 </div>
+

@@ -50,6 +50,20 @@
   .dbl-page .dbl-text a{
     color:#fff;
   }
+
+  .dbl-page #dbl-contact-form .dbl-btn-row{
+    justify-content:center;
+  }
+
+  .dbl-page .dbl-contact-status{
+    margin:18px auto 0;
+    width:100%;
+    max-width:34rem;
+    display:block;
+    text-align:center;
+    font-weight:700;
+    line-height:1.45;
+  }
 </style>
 
 <link rel="preload" as="image" href="{{ .Params.heroImage | default "/images/home/hero.jpg" }}">
@@ -96,10 +110,12 @@
     function setStatus(message) {
       if (!statusEl) return;
       statusEl.textContent = message;
+      statusEl.style.margin = "18px auto 0";
       statusEl.style.textAlign = "center";
       statusEl.style.fontWeight = "700";
       statusEl.style.display = "block";
       statusEl.style.width = "100%";
+      statusEl.style.maxWidth = "34rem";
     }
 
     if (!window.emailjs) {
@@ -164,6 +180,8 @@
   }
 </script>
 {{- end -}}
+
+
 
 
 
